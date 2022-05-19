@@ -27,9 +27,9 @@ while True:
     else:
         print(f"\nYou typed '{user_choice}' which isn't a valid throw.")
 
-    play_again = input('\nPlay again? Type y/n: ')
+    play_again = input('\nPlay again? (y/n): ')
 
-    if (play_again != 'y'):
+    if (play_again.lower() != 'y'):
         break
 
 print("\nGoodbye!")
