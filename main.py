@@ -7,8 +7,16 @@ First steps:
 """
 import random
 
-user_choice = input("Enter your choice: ")
-computer_choice = random.choice(["rock", "scissors", "rock"])
+CHOICES = ["rock", "paper", "scissors"]
 
-print(f"User choice: {user_choice}")
-print(f"Computer choice: {computer_choice}")
+print("Make a throw")
+
+user_choice = input("Type: rock, paper or scissors: ")
+
+if user_choice in CHOICES:
+    computer_choice = random.choice(CHOICES)
+    print(
+      f"\nYou threw '{user_choice}', the computer threw '{computer_choice}'"
+    )
+else:
+    print(f"\nYou typed '{user_choice}' which isn't a valid throw.")
