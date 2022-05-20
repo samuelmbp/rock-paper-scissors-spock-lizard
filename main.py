@@ -21,26 +21,34 @@ Determine the winner:
 import random
 from choice import Choice
 
-# CHOICES = ["rock", "paper", "scissors"]
 CHOICES = [f"{choice.name} [{choice.value}]" for choice in Choice]
 CHOICES_STR = ", ".join(CHOICES)
 
 BEATS = {
-    Choice.Rock: [Choice.Scissors],
-    Choice.Paper: [Choice.Rock],
-    Choice.Scissors: [Choice.Paper],
+    Choice.Rock: [Choice.Lizard, Choice.Scissors],
+    Choice.Paper: [Choice.Spock, Choice.Rock],
+    Choice.Scissors: [Choice.Lizard, Choice.Paper],
+    Choice.Lizard: [Choice.Spock, Choice.Paper],
+    Choice.Spock: [Choice.Scissors, Choice.Rock],
 }
 
 MESSAGES = {
-    (Choice.Rock, Choice.Scissors): "smashes",
+    (Choice.Rock, Choice.Scissors): "crushes",
+    (Choice.Rock, Choice.Lizard): "crushes",
     (Choice.Paper, Choice.Rock): "covers",
+    (Choice.Paper, Choice.Spock): "disproves",
     (Choice.Scissors, Choice.Paper): "cut",
+    (Choice.Scissors, Choice.Lizard): "decapitates",
+    (Choice.Lizard, Choice.Paper): "eats",
+    (Choice.Lizard, Choice.Spock): "poisons",
+    (Choice.Spock, Choice.Scissors): "smashes",
+    (Choice.Spock, Choice.Rock): "vaporize",
 }
 
 
 def show_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
-        print(f"It's a tie! Both users chose '{user_choice.name.lower()}'")
+        print(f"It's a tie! Both users chose '{user_choice.name}'")
     else:
         # BEATS[user_choice] is the list of things user_choice wins over
         user_wins = computer_choice in BEATS[user_choice]
