@@ -5,7 +5,7 @@ A Command Line Game.
 ## Installation
 
 - Fork this repository to your account
-- Clone and ```cd rock-paper-scissors-spock-lizard``` in the forked repository on your computer
+- Clone and ```cd rpssl``` in the forked repository on your computer
 - Run the following command in the terminal: ```python main.py```
 
 
@@ -42,7 +42,11 @@ Play again? (y/n): n
 Goodbye!
 ```
 
+## Process & Diagrams
 
+![First Diagram](./images/Diagrame-1.png)
+![Second Diagram](./images/Diagrame-2.png)
+![Third Diagram](./images/Diagrame-3.png)
 ## Technologies
 
 - Python
